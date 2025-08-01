@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital-clock</title>
- <link href='https://fonts.googleapis.com/css?family=Cantata One' rel='stylesheet'>
-      
+    <link href='https://fonts.googleapis.com/css?family=Cantata One' rel='stylesheet'>
+
     <link rel="stylesheet" href="dclock.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
@@ -33,7 +33,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <script>
         const hours = document.getElementById("hrs");
@@ -41,9 +40,9 @@
         const sec = document.getElementById("sec");
         setInterval(() => {
             let ct = new Date();
-            hours.innerHTML = (ct.getHours() < 10 ? "0" : " ") + ct.getHours();
-            min.innerHTML = (ct.getMinutes() < 10 ? "0" : " ") + ct.getMinutes();
-            sec.innerHTML = (ct.getSeconds() < 10 ? "0" : " ") + ct.getSeconds();
+            hours.innerHTML = (ct.getHours() < 10 ? "0" : " ") + ct.getHours();// document.getElementById("hrs").innerHTML = (ct.getHours() < 10 ? "0" : " ") + ct.getHours();;
+            min.innerHTML = (ct.getMinutes() < 10 ? "0" : " ") + ct.getMinutes(); // to reduce that i have created one variable called hours 
+            sec.innerHTML = (ct.getSeconds() < 10 ? "0" : " ") + ct.getSeconds();//hours=document.getElementById("hrs")
         }, 1000);
 
     </script>
