@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-clock</title>
+ <link href='https://fonts.googleapis.com/css?family=Cantata One' rel='stylesheet'>
+      
+    <link rel="stylesheet" href="dclock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="background">
+        <div class="main">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+
+            </div>
+            <div class="location">
+                <div class="icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="text">
+                    <h1>Kothagudem / Telangana / INDIA</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const hours = document.getElementById("hrs");
+        const min = document.getElementById("min");
+        const sec = document.getElementById("sec");
+        setInterval(() => {
+            let ct = new Date();
+            hrs.innerHTML = (ct.getHours() < 10 ? "0" : " ") + ct.getHours();
+            min.innerHTML = (ct.getMinutes() < 10 ? "0" : " ") + ct.getMinutes();
+            sec.innerHTML = (ct.getSeconds() < 10 ? "0" : " ") + ct.getSeconds();
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
