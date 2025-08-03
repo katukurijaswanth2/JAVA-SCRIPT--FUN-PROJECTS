@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK WITH FUNCTIONS</title>
+    <script src="forloop.js" defer></script>
+    <style>
+        body {
+            width: 100%;
+        }
+
+        select {
+            background-color: red;
+            overflow: hidden;
+            height: 100px;
+            width: 100px;
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: scroll;
+        }
+
+        .cale {
+            height: 120px;
+            justify-content: center;
+            display: flex;
+            background-color: aquamarine;
+            align-items: center;
+
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            column-gap: 20px;
+            align-items: center;
+            /* padding: 100px; */
+            font-size: larger;
+            font-weight: 500;
+
+
+
+        }
+
+        .buttons>.inc {
+            background-color: rgb(29, 205, 76);
+            padding: 20px;
+            font-weight: 500;
+            font-size: larger;
+        }
+
+        .buttons>.dec {
+            background-color: red;
+            padding: 20px;
+            font-weight: 500;
+            font-size: larger;
+        }
+
+        #num {
+            font-size: xx-large;
+            font-weight: 500;
+            text-decoration: dotted;
+        }
+
+        #message {
+            background-color: red;
+            color: white;
+            font-family: cursive;
+            font-weight: 500;
+            font-size: xx-large;
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="cale">
+        <form action="">
+            <select name="" id="date">date</select>
+            <select name="" id="month">month</select>
+            <select name="" id="year">year</select>
+
+        </form>
+    </div>
+    <div class="buttons">
+        <p id="messageS">ENTER YOUR SALARY</p>
+        <button onclick="increase()" class="inc">Increase</button>
+        <p id="num">0</p>
+        <button onclick="decrease()" class="dec">Decrease</button>
+        <p id="message"></p>
+    </div>
+    <h1 id="string">hello</p>
+        <script>
+
+            let str = "jasAWETH999YEF@00!@#$%^&FEGRwanth";
+            let upp = "";
+            let low = "";
+            let num=" ";
+            let spl = "";
+            for (let i = 0; i < str.length; i++) {
+                let pp = str[i];
+                if (pp >= "A" && pp <= "Z") {
+                    upp = upp + str[i];
+
+                } else if(pp >="a" && pp <= "z")
+                    {low = low + str[i];}
+                    else if(pp>=0 && pp<=9){
+                        num=num +str[i];
+                    }
+                    else{
+                        spl=spl+str[i];
+                    }
+                }
+  
+            console.log(num)
+            console.log(upp);
+            console.log(low);
+            console.log(spl);
+            console.log(str)
+
+            // let a =document.getElementById(string).innerHTM
+        </script>
+</body>
+
+</html>
