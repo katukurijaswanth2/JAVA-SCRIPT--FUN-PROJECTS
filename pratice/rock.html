@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    .game {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .choices {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 2rem;
+    }
+
+    .choice {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #fff;
+      color: #333;
+      transition: 0.3s ease;
+    }
+
+    .choice:hover {
+      background-color: #f1c40f;
+    }
+
+    .result p, #winner {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rock Paper Scissors ✊✋✌️</h1>
+  <div class="game">
+    <div class="choices">
+      <button class="choice" data-choice="rock">🪨 Rock</button>
+      <button class="choice" data-choice="paper">📄 Paper</button>
+      <button class="choice" data-choice="scissors">✂️ Scissors</button>
+    </div>
+    <div class="result">
+      <p id="user-choice">You chose: </p>
+      <p id="computer-choice">Computer chose: </p>
+      <h2 id="winner"></h2>
+    </div>
+  </div>
+
+  <script>
+    const choices = document.querySelectorAll(".choice");
+    const userChoiceDisplay = document.getElementById("user-choice");
+    const computerChoiceDisplay = document.getElementById("computer-choice");
+    const winnerDisplay = document.getElementById("winner");
+
+    choices.forEach(button => {
+      button.addEventListener("click", () => {
+        const userChoice = button.dataset.choice;
+        const computerChoice = getComputerChoice();
+        const result = getResult(userChoice, computerChoice);
+
+        userChoiceDisplay.textContent = "You chose: " + userChoice;
+        computerChoiceDisplay.textContent = "Computer chose: " + computerChoice;
+        winnerDisplay.textContent = result;
+      });
+    });
+
+    function getComputerChoice() {
+      const options = ["rock", "paper", "scissors"];
+      const randomIndex = Math.floor(Math.random() * 3);
+      return options[randomIndex];
+    }
+
+    function getResult(user, computer) {
+      if (user === computer) return "It's a Draw!";
+      if (
+        (user === "rock" && computer === "scissors") ||
+        (user === "paper" && computer === "rock") ||
+        (user === "scissors" && computer === "paper")
+      ) {
+        return "You Win! 🎉";
+      }
+      return "You Lose! 💔";
+    }
+  </script>
+</body>
+</html>
