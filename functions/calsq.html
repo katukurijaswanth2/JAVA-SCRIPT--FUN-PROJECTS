@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>square of n</title>
+    <style>
+        .main {
+            height: 50vh;
+            width: 50%;
+            background-color: rgb(118, 118, 252);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .container {
+            column-gap: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #num {
+            font-size: 1.5rem;
+            border: none;
+            border-bottom: 5px solid blue;
+            padding: 1rem;
+            font-size: 1.5rem;
+            color: blue;
+            font-weight: bold;
+        }
+
+        #click {
+            font-size: 1.5rem;
+            background-color: rgb(205, 43, 226);
+            padding: 1rem;
+            border: none;
+            color: rgb(248, 252, 255);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <input type="text" id="num" placeholder="enter the n value">
+            <button id="click" onclick="calculation()"> click me</button>
+        </div>
+        <div class="value">
+            <h1 id="cal-val" ></h1>
+        </div>
+    </div>
+    <script>function calculation() {
+        const actualv=document.getElementById("num").value.trim();
+        const actnum= Number(actualv);
+        const outval = document.getElementById("cal-val")
+        if (!isNaN(actnum)) {
+         outval.innerText="the square of "+actnum+" is "+(actnum*actnum);
+
+        }else{}
+               outval.innerText="ENTER THE NUMBER ";
+        }
+            
+        }
+
+    </script>
+</body>
+
+</html>
