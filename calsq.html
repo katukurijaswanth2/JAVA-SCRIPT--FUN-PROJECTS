@@ -60,11 +60,12 @@
         const actualv=document.getElementById("num").value.trim();
         const actnum= Number(actualv);
         const outval = document.getElementById("cal-val")
-        if (!isNaN(actnum)) {
+        if (actnum!=="" && !isNaN(actnum)) {
          outval.innerText="the square of "+actnum+" is "+(actnum*actnum);
+         return;
 
-        }else{}
-               outval.innerText="ENTER THE NUMBER ";
+        }else{
+               outval.innerText="ENTER THE NUMBER ";}
         }
             
         

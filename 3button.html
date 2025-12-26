@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNAMIC PRICES</title>
+    <style>
+        .container{
+            height: 30vh;
+            width: 100%;
+            background-color: rgb(249, 163, 52);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+        button{
+            font-size: 1.1rem;
+            background-color: #ed4545;
+            border: none;
+            padding: 5px;
+            width: 8rem;
+            color: white;
+            height: 2.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .output{
+            background-color: rgb(71, 251, 191);
+            height: 20vh;
+            width: 100%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <button onclick="dynamic('veg','500')">VEG</button>
+            <button onclick="dynamic('non veg','100')">NON-VEG</button>
+            <button onclick="dynamic('DRINKS','600')">DRINKS</button>
+
+            </div>
+            <div class="output">
+                <p id="o-text"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function dynamic(name,price){
+            const output= document.getElementById("o-text");
+            output.innerHTML=`the product name is ${name} <br>
+            the product price is ${price}`;
+            
+        }
+
+    </script>
+</body>
+</html>
